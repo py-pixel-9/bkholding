@@ -3,6 +3,9 @@
 - 라이브 주소(예정): https://bkholding.co.kr (www 포함)
 - 호스팅: GitHub Pages (무료, HTTPS 자동) — 레포 `py-pixel-9/bkholding`
 - 문의 폼 → Google Apps Script 웹앱 → Google Sheet "BK Holdings 문의" (leads 시트)
+  - 시트: https://docs.google.com/spreadsheets/d/1C3Qjlog77cZPt15Pp7HG4uGayRDSJ6WDczFcDqYX0EM/edit
+  - Apps Script 프로젝트: "BK Holdings Leads" (시트에 종속, 확장 프로그램 > Apps Script)
+  - 웹앱 배포 버전 1 (2026-10-31). 코드 수정 후에는 배포 > 배포 관리 > 새 버전으로 재배포해야 반영됨
 - 광고 출처: URL 파라미터로 자동 기록 (`ad`, `adset`, `campaign`, `utm_*`)
 
 ## 파일
@@ -24,7 +27,7 @@
 2. Settings > Pages > Source: Deploy from a branch, `main` / `/ (root)`
 3. Settings > Pages > Custom domain: `bkholding.co.kr` → Enforce HTTPS 체크 (인증서 발급 수 분)
 4. 카페24 DNS 관리 (아이디 dbgusgh123 > 도메인관리 > DNS 관리 > bkholding.co.kr)
-   - A 레코드 (호스트 빈칸) 4개: 185.199.108.153 / 185.199.109.153 / 185.199.110.153 / 185.199.111.153
+   - A 레코드 (루트): 185.199.108.153 (카페24는 루트 A 1개만 허용. GitHub는 1개로도 동작)
    - CNAME: `www` → `py-pixel-9.github.io`
    - 기존 메일 레코드(MX, webmail A, SPF, _dmarc)는 그대로 둠
 
