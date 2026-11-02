@@ -5,7 +5,10 @@
 - 문의 폼 → Google Apps Script 웹앱 → Google Sheet "BK Holdings 문의" (leads 시트)
   - 시트: https://docs.google.com/spreadsheets/d/1C3Qjlog77cZPt15Pp7HG4uGayRDSJ6WDczFcDqYX0EM/edit
   - Apps Script 프로젝트: "BK Holdings Leads" (시트에 종속, 확장 프로그램 > Apps Script)
-  - 웹앱 배포 버전 1 (2026-10-31). 코드 수정 후에는 배포 > 배포 관리 > 새 버전으로 재배포해야 반영됨
+  - 웹앱 배포 버전 2 (2026-11-02, 스크립트 v2). 코드 수정 후에는 배포 > 배포 관리 > 새 버전으로 재배포해야 반영됨
+  - 시트 구성(v2): `leads`(접수일·접수시각·채널·광고·이름·연락처·메모·상태 드롭다운·담당 메모…) / `요약`(전체·오늘·7일·구매, 채널별·광고별·날짜별 집계+차트) / `leads_v1_1102`(구버전 테스트 행)
+  - 채널 자동 분류: utm_source·ad·referrer 기준 인스타그램/유튜브/메타광고/네이버/구글/텔레그램/카카오/직접
+  - 서식 재적용·탭 재생성: Apps Script에서 `setupSheet` 실행
 - 광고 출처: URL 파라미터로 자동 기록 (`ad`, `adset`, `campaign`, `utm_*`)
 
 ## 파일
