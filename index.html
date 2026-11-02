@@ -74,6 +74,15 @@
   .pbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px}
   .pbox dt{opacity:.7} .pbox dd{margin:0;font-weight:600}
 
+  .cert{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.25);margin:0 0 14px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+  .cert img{display:block;width:100%;height:auto}
+  .cert .cap{font-size:12px;color:var(--muted);padding:10px 14px;background:#F7F7F4;border-top:1px solid var(--line)}
+
+  .office{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .office figure{margin:0;border-radius:14px;overflow:hidden;background:#ddd;aspect-ratio:4/3}
+  .office figure.wide{grid-column:1/-1;aspect-ratio:16/9}
+  .office img{width:100%;height:100%;object-fit:cover;display:block}
+
   .steps{display:grid;gap:12px}
   .step{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:16px}
   .step .n{font-weight:800;color:var(--accent);font-size:13px;letter-spacing:.1em;min-width:52px}
@@ -155,6 +164,10 @@
   <div class="wrap">
     <h2>핵심 로직은<br>특허 출원을 마쳤습니다.</h2>
     <p class="sub">급변하는 구간에서 사람이 가장 흔들리는 판단을 시스템이 대신 처리하도록 설계한 로직입니다. 출원 번호는 특허로(patent.go.kr)에서 조회할 수 있습니다.</p>
+    <div class="cert">
+      <img src="assets/patent_cert.jpg" alt="지식재산처 출원사실증명원: 출원번호 특허-2026-0198698, 출원일 2026년 10월 15일 (출원인·발명자 정보는 가림 처리)" width="1292" height="1028" loading="lazy">
+      <div class="cap">지식재산처 출원사실증명원 원본 · 개인정보는 가림 처리</div>
+    </div>
     <div class="pbox">
       <dl>
         <dt>구분</dt><dd>특허 출원 (지식재산처)</dd>
@@ -166,7 +179,19 @@
   </div>
 </section>
 
-<section class="block" id="how">
+<section class="block" id="office">
+  <div class="wrap">
+    <h2>찾아오실 수 있는 곳에서<br>운영합니다.</h2>
+    <p class="sub">체험 안내와 설치 지원은 전화뿐 아니라 사무실에서도 진행합니다.</p>
+    <div class="office">
+      <figure class="wide"><img src="assets/office_1.jpg" alt="사무실 복도와 유리 회의실" width="1200" height="901" loading="lazy"></figure>
+      <figure><img src="assets/office_2.jpg" alt="대표실" width="1200" height="900" loading="lazy"></figure>
+      <figure><img src="assets/office_3.jpg" alt="사무실 건물 외관" width="1200" height="592" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="how" style="padding-top:0">
   <div class="wrap">
     <h2>무료 체험은 이렇게 진행됩니다.</h2>
     <p class="sub">신청부터 시작까지 세 단계입니다.</p>
