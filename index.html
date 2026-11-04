@@ -265,7 +265,7 @@
 /* ===== 설정 ===== */
 const CONFIG = {
   ENDPOINT: "https://script.google.com/macros/s/AKfycbwDU2QRIn__5NNzOWBPGmWUeZrnSNDag11KC986lTTgqkrplNV9ZLk1rnTD6WD1AKwnzw/exec",
-  META_PIXEL_ID: ""    // 메타 픽셀 ID (선택)
+  META_PIXEL_ID: "1356626896412222"
 };
 
 /* ===== 광고 출처 캡처 =====
@@ -310,6 +310,7 @@ function setErr(el, errId, on){
 
 form.addEventListener("submit", async (ev) => {
   ev.preventDefault();
+  if (btn.disabled) return;
   msg.className = "msg"; msg.textContent = "";
   const name = form.name.value.trim();
   const phone = phoneEl.value.trim();
@@ -331,13 +332,15 @@ form.addEventListener("submit", async (ev) => {
 
   btn.disabled = true; btn.textContent = "접수 중…";
   try {
-    if (CONFIG.ENDPOINT) {
-      await fetch(CONFIG.ENDPOINT, { method: "POST", mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) });
-    } else {
-      console.log("[lead payload]", payload);
-    }
-    if (window.fbq) fbq("track", "Lead", { content_name: payload.ad || "direct" });
+    if (!CONFIG.ENDPOINT) throw new Error("Missing submission endpoint");
+    const response = await fetch(CONFIG.ENDPOINT, { method: "POST", mode: "cors", credentials: "omit",
+      headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) });
+    if (!response.ok) throw new Error("Submission HTTP error");
+    const result = await response.json();
+    if (result.ok !== true) throw new Error("Submission was not saved");
+    // The server returns ok:true only after the sheet row has been saved.
+    try { if (window.fbq) fbq("track", "Lead", { content_name: payload.ad || "direct" }); }
+    catch (trackingError) { console.warn("Meta Lead tracking failed", trackingError); }
     ok(); form.reset(); form.agree.checked = true;
   } catch (err) {
     fail("접수에 실패했습니다. 잠시 후 다시 시도해 주세요.");
