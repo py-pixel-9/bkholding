@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="ko">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TW9S342P');</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>버킷홀딩스 | 감정을 뺀 자동 시스템 프로그램</title>
@@ -125,6 +137,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW9S342P"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header class="hero">
   <div class="wrap">
@@ -341,6 +357,10 @@ form.addEventListener("submit", async (ev) => {
     // The server returns ok:true only after the sheet row has been saved.
     try { if (window.fbq) fbq("track", "Lead", { content_name: payload.ad || "direct" }); }
     catch (trackingError) { console.warn("Meta Lead tracking failed", trackingError); }
+    try {
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: "lead_submit", ad: payload.ad || "direct", adset: payload.adset || "", campaign: payload.campaign || "", site: "bkholding" });
+    } catch (trackingError) { console.warn("GTM lead_submit push failed", trackingError); }
     ok(); form.reset(); form.agree.checked = true;
   } catch (err) {
     fail("접수에 실패했습니다. 잠시 후 다시 시도해 주세요.");
