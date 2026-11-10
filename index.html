@@ -62,33 +62,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .block h2{font-size:clamp(24px,6.4vw,32px);line-height:1.25;letter-spacing:-.02em;margin:0 0 10px;color:var(--navy);word-break:keep-all}
   .block .sub{color:var(--muted);margin:0 0 26px;font-size:15px;word-break:keep-all}
 
-  .vs{display:grid;gap:12px;margin-bottom:0}
-  .vs .card{border-radius:var(--radius);padding:20px}
-  .vs .human{background:var(--paper-2);border:1px solid var(--line)}
-  .vs .machine{background:var(--navy);color:#fff}
-  .vs .k{font-weight:800;font-size:12px;letter-spacing:.14em;margin-bottom:8px}
-  .vs .human .k{color:var(--muted)} .vs .machine .k{color:var(--sky)}
-  .vs h3{margin:0 0 8px;font-size:19px;letter-spacing:-.01em;word-break:keep-all}
-  .vs .human h3{color:var(--navy)}
-  .vs p{margin:0;font-size:15px;word-break:keep-all}
-  .vs .human p{color:#3f4a56} .vs .machine p{color:rgba(255,255,255,.82)}
 
-  .list{display:grid;gap:12px}
-  .card2{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px}
-  .card2 .k{font-weight:800;color:var(--accent);font-size:13px;letter-spacing:.12em;margin-bottom:6px}
-  .card2 h3{margin:0 0 6px;font-size:18px;color:var(--navy);letter-spacing:-.01em}
-  .card2 p{margin:0;font-size:15px;color:#3f4a56;word-break:keep-all}
 
-  .dark{background:var(--navy);color:#fff}
-  .dark h2{color:#fff}
-  .dark .sub{color:rgba(255,255,255,.72)}
-  .pbox{border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);padding:20px;background:rgba(255,255,255,.04)}
+  .patent{display:grid;gap:14px;align-items:start}
+  .cert{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 28px rgba(14,26,43,.12);display:block;max-width:240px}
+  .cert img{display:block;width:100%;height:auto}
+  .cert .cap{font-size:11px;color:var(--muted);padding:8px 12px;background:#F7F7F4;border-top:1px solid var(--line)}
+  .pbox{background:var(--navy);color:#fff;border-radius:var(--radius);padding:20px}
   .pbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px}
   .pbox dt{opacity:.7} .pbox dd{margin:0;font-weight:600}
-
-  .cert{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.25);margin:0 0 14px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
-  .cert img{display:block;width:100%;height:auto}
-  .cert .cap{font-size:12px;color:var(--muted);padding:10px 14px;background:#F7F7F4;border-top:1px solid var(--line)}
+  .pbox .name{margin:14px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;color:rgba(255,255,255,.82);word-break:keep-all}
 
   .office{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .office figure{margin:0;border-radius:14px;overflow:hidden;background:#ddd;aspect-ratio:4/3}
@@ -131,8 +114,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .wrap{width:min(100% - 48px, 720px)}
     .hero{padding:44px 0 56px}
     .hero .cta{grid-template-columns:1fr 1fr;max-width:520px}
-    .vs{grid-template-columns:1fr 1fr}
     .sticky{display:none}
+    .patent{grid-template-columns:240px 1fr;gap:20px}
   }
 </style>
 </head>
@@ -159,36 +142,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<section class="block" id="why">
-  <div class="wrap">
-    <h2>결과를 흔드는 것은<br>대부분 감정입니다.</h2>
-    <p class="sub">같은 규칙이라도 사람이 실행하면 매번 달라집니다. 시스템은 매번 같습니다.</p>
-    <div class="vs">
-      <div class="card human"><div class="k">사람</div><h3>불안하면 서두르고, 잘되면 욕심냅니다</h3><p>어제의 계획이 오늘의 기분에 밀립니다. 같은 자리에서 매번 다른 결정을 합니다.</p></div>
-      <div class="card machine"><div class="k">시스템</div><h3>같은 조건이면 같은 행동만 합니다</h3><p>조건이 맞으면 실행하고, 맞지 않으면 아무것도 하지 않습니다. 기분이 없습니다.</p></div>
-    </div>
-    <div class="list" style="margin-top:12px">
-      <div class="card2"><div class="k">01</div><h3>감정 배제</h3><p>불안할 때 성급해지고, 잘될 때 욕심이 커지는 순간이 결과를 흔듭니다. 시스템은 두려움도 욕심도 없이 정해진 조건만 봅니다.</p></div>
-      <div class="card2"><div class="k">02</div><h3>검증된 로직</h3><p>즉흥적인 판단 대신 과거 데이터로 반복 검증한 규칙만 사용합니다.</p></div>
-      <div class="card2"><div class="k">03</div><h3>쉬지 않는 실행</h3><p>자리를 비운 시간, 잠든 시간에도 규칙은 똑같이 작동합니다. 화면 앞에 붙어 있을 필요가 없습니다.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="block dark" id="patent">
+<section class="block" id="patent">
   <div class="wrap">
     <h2>핵심 로직은<br>특허 출원을 마쳤습니다.</h2>
     <p class="sub">급변하는 구간에서 사람이 가장 흔들리는 판단을 시스템이 대신 처리하도록 설계한 로직입니다. 출원 번호는 특허로(patent.go.kr)에서 조회할 수 있습니다.</p>
-    <div class="cert">
-      <img src="assets/patent_cert.jpg" alt="지식재산처 출원사실증명원: 출원번호 특허-2026-0198698, 출원일 2026년 10월 15일 (출원인·발명자 정보는 가림 처리)" width="1292" height="1028" loading="lazy">
-      <div class="cap">지식재산처 출원사실증명원 원본 · 개인정보는 가림 처리</div>
-    </div>
-    <div class="pbox">
-      <dl>
-        <dt>구분</dt><dd>특허 출원 (지식재산처)</dd>
-        <dt>출원번호</dt><dd>10-2026-0198698</dd>
-        <dt>출원일</dt><dd>2026년 10월 15일</dd>
-      </dl>
+    <div class="patent">
+      <a class="cert" href="assets/patent_cert.jpg" target="_blank" rel="noopener" aria-label="출원사실증명원 크게 보기">
+        <img src="assets/patent_cert.jpg" alt="지식재산처 출원사실증명원: 출원번호 특허-2026-0198698, 출원일 2026년 10월 15일 (출원인·발명자 정보는 가림 처리)" width="1292" height="1028" loading="lazy">
+        <div class="cap">출원사실증명원 원본 · 탭하면 크게 보기</div>
+      </a>
+      <div class="pbox">
+        <dl>
+          <dt>구분</dt><dd>특허 출원 (지식재산처)</dd>
+          <dt>출원번호</dt><dd>10-2026-0198698</dd>
+          <dt>출원일</dt><dd>2026년 10월 15일</dd>
+        </dl>
+        <p class="name">시세 변동 상태에 따른 방향별 주문 바스켓의 진입 요청 및 공통 청산 가격 제어 방법 및 장치</p>
+      </div>
     </div>
   </div>
 </section>
