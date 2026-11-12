@@ -35,38 +35,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .wrap{width:min(100% - 32px, 560px);margin:0 auto}
   .brand{font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px}
 
-  /* HERO */
-  .hero{background:var(--navy);color:#fff;padding:28px 0 36px;position:relative;overflow:hidden}
-  .hero:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,rgba(59,130,246,.35),transparent)}
-  .hero .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;position:relative}
-  .hero .top .brand{opacity:.85}
-  .hero .top .dot{width:12px;height:12px;border-radius:50%;background:var(--accent)}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;opacity:.9;margin-bottom:14px;position:relative}
-  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
-  h1{font-size:clamp(30px,8.4vw,44px);line-height:1.18;letter-spacing:-.02em;margin:0 0 14px;font-weight:800;word-break:keep-all;position:relative}
-  h1 em{font-style:normal;color:var(--sky)}
-  .lead{font-size:16px;opacity:.9;margin:0 0 22px;word-break:keep-all;position:relative}
-  .pills{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:0;position:relative}
-  .pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 10px 12px;text-align:center}
-  .pill small{display:block;font-size:11px;opacity:.7;letter-spacing:.04em;margin-bottom:4px}
-  .pill b{display:block;font-size:15px;line-height:1.25;letter-spacing:-.01em;color:#fff;word-break:keep-all}
+  /* TOP BAR */
+  .topbar{background:var(--navy);color:#fff;padding:16px 0}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between}
+  .topbar .brand{opacity:.85}
+  .topbar .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
   .btn{display:block;width:100%;text-align:center;padding:17px 20px;border-radius:14px;font-weight:800;font-size:17px;border:0;cursor:pointer;letter-spacing:-.01em;transition:transform .08s,background .15s;font-family:inherit}
   .btn:active{transform:translateY(1px)}
   .btn-accent{background:var(--accent);color:#fff}
   .btn-accent:hover{background:var(--accent-ink)}
-  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);font-weight:600;font-size:15px;padding:14px}
-  .hero .cta{display:grid;gap:10px;position:relative}
 
   /* SECTIONS */
-  section.block{padding:52px 0}
-  .block h2{font-size:clamp(24px,6.4vw,32px);line-height:1.25;letter-spacing:-.02em;margin:0 0 10px;color:var(--navy);word-break:keep-all}
+  section.block{padding:40px 0 52px}
+  .block h1,.block h2{font-weight:700;font-size:clamp(24px,6.4vw,32px);line-height:1.25;letter-spacing:-.02em;margin:0 0 10px;color:var(--navy);word-break:keep-all}
   .block .sub{color:var(--muted);margin:0 0 26px;font-size:15px;word-break:keep-all}
-
-
-
-  .cert{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 28px rgba(14,26,43,.12);display:block;max-width:240px}
-  .cert img{display:block;width:100%;height:auto}
-  .cert .cap{font-size:11px;color:var(--muted);padding:8px 12px;background:#F7F7F4;border-top:1px solid var(--line)}
 
   .office{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .office figure{margin:0;border-radius:14px;overflow:hidden;background:#ddd;aspect-ratio:4/3}
@@ -107,8 +89,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   @media (min-width:720px){
     .wrap{width:min(100% - 48px, 720px)}
-    .hero{padding:44px 0 56px}
-    .hero .cta{grid-template-columns:1fr 1fr;max-width:520px}
     .sticky{display:none}
   }
 </style>
@@ -119,35 +99,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header class="hero">
-  <div class="wrap">
-    <div class="top"><span class="brand">BK Holdings</span><span class="dot"></span></div>
-    <p class="eyebrow"><i></i>자동 시스템 프로그램 · 무료 체험 모집</p>
-    <h1>판단에서<br><em>사람의 감정</em>을 뺐습니다.</h1>
-    <p class="lead">이 자동 시스템 프로그램은 사람 대신 검증된 규칙으로 실행합니다. 두려움과 욕심이 끼어들 자리가 없습니다.</p>
-    <div class="pills">
-      <div class="pill"><small>원칙</small><b>감정 배제</b></div>
-      <div class="pill"><small>실행</small><b>검증된 로직</b></div>
-      <div class="pill"><small>기술</small><b>특허 출원</b></div>
-    </div>
-  </div>
+<header class="topbar">
+  <div class="wrap"><span class="brand">BK Holdings</span><span class="dot"></span></div>
 </header>
-
-
-<section class="block" id="patent">
-  <div class="wrap">
-    <h2>핵심 로직은<br>특허 출원을 마쳤습니다.</h2>
-    <p class="sub">급변하는 구간에서 사람이 가장 흔들리는 판단을 시스템이 대신 처리하도록 설계한 로직입니다. 출원 번호는 특허로(patent.go.kr)에서 조회할 수 있습니다.</p>
-      <a class="cert" href="assets/patent_cert.jpg" target="_blank" rel="noopener" aria-label="출원사실증명원 크게 보기">
-        <img src="assets/patent_cert.jpg" alt="지식재산처 출원사실증명원: 출원번호 특허-2026-0198698, 출원일 2026년 10월 15일 (출원인·발명자 정보는 가림 처리)" width="1292" height="1028" loading="lazy">
-        <div class="cap">출원번호 10-2026-0198698 · 2026.10.15 · 탭하면 크게 보기</div>
-      </a>
-  </div>
-</section>
 
 <section class="block" id="how">
   <div class="wrap">
-    <h2>무료 체험은 이렇게 진행됩니다.</h2>
+    <h1>무료 체험은 이렇게 진행됩니다.</h1>
     <p class="sub">신청부터 시작까지 세 단계입니다.</p>
     <div class="steps">
       <div class="step"><span class="n">STEP 1</span><h3>아래 폼에 이름과 연락처를 남깁니다.</h3></div>
@@ -324,7 +282,7 @@ function ok(){ msg.textContent = "신청이 접수되었습니다. 곧 연락드
 function fail(t){ msg.textContent = t; msg.className = "msg err"; }
 
 /* ===== 모바일 하단 고정 CTA ===== */
-const sticky = document.getElementById("sticky"), heroEl = document.querySelector(".hero"), applyEl = document.getElementById("apply");
+const sticky = document.getElementById("sticky"), heroEl = document.querySelector(".topbar"), applyEl = document.getElementById("apply");
 let applyVisible = false;
 new IntersectionObserver(([en]) => { sticky.classList.toggle("on", !en.isIntersecting && !applyVisible); }, { threshold: 0 }).observe(heroEl);
 new IntersectionObserver(([en]) => { applyVisible = en.isIntersecting; if (applyVisible) sticky.classList.remove("on"); }, { threshold: .2 }).observe(applyEl);
