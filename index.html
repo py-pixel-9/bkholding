@@ -35,11 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .wrap{width:min(100% - 32px, 560px);margin:0 auto}
   .brand{font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px}
 
-  /* TOP BAR */
-  .topbar{background:var(--navy);color:#fff;padding:16px 0}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between}
-  .topbar .brand{opacity:.85}
-  .topbar .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  /* BUTTONS */
   .btn{display:block;width:100%;text-align:center;padding:17px 20px;border-radius:14px;font-weight:800;font-size:17px;border:0;cursor:pointer;letter-spacing:-.01em;transition:transform .08s,background .15s;font-family:inherit}
   .btn:active{transform:translateY(1px)}
   .btn-accent{background:var(--accent);color:#fff}
@@ -98,10 +94,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW9S342P"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<header class="topbar">
-  <div class="wrap"><span class="brand">BK Holdings</span><span class="dot"></span></div>
-</header>
 
 <section class="block" id="how">
   <div class="wrap">
@@ -282,7 +274,7 @@ function ok(){ msg.textContent = "신청이 접수되었습니다. 곧 연락드
 function fail(t){ msg.textContent = t; msg.className = "msg err"; }
 
 /* ===== 모바일 하단 고정 CTA ===== */
-const sticky = document.getElementById("sticky"), heroEl = document.querySelector(".topbar"), applyEl = document.getElementById("apply");
+const sticky = document.getElementById("sticky"), heroEl = document.getElementById("how"), applyEl = document.getElementById("apply");
 let applyVisible = false;
 new IntersectionObserver(([en]) => { sticky.classList.toggle("on", !en.isIntersecting && !applyVisible); }, { threshold: 0 }).observe(heroEl);
 new IntersectionObserver(([en]) => { applyVisible = en.isIntersecting; if (applyVisible) sticky.classList.remove("on"); }, { threshold: .2 }).observe(applyEl);
